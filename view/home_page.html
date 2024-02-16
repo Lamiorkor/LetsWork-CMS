@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Work! - Home Page</title>
+    <link rel="stylesheet" href="home_page.css">
+</head>
+<body>
+    <div class="home-page">
+        <section class="statistics" onclick="navigateToChoreManagement()">
+            <div class="status-box in-progress">
+                <p>In Progress</p>
+                <span>2</span>
+            </div>
+            <div class="status-box incomplete">
+                <p>Incomplete</p>
+                <span>1</span>
+            </div>
+            <div class="status-box completed">
+                <p>Completed</p>
+                <span>3</span>
+            </div>
+        </section>
+
+        <section class="user-info">
+            <h2>Welcome, Johnny Bravo</h2>
+        </section>
+
+        <section class="upcoming-chores">
+            <h2>Upcoming Chores</h2>
+            <ul>
+                <li>Cook Banku - Due on 2024-02-10</li>
+            </ul>
+        </section>
+
+        <div class="score">
+            <p>Completion Score:</p>
+            <span style="color: red;">0%</span>
+        </div>
+    </div>
+
+    <script>
+        function navigateToChoreManagement() {
+            window.location.href = 'manage_chores.html';
+        }
+    </script>
+</body>
+</html>
