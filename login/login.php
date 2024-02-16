@@ -18,7 +18,7 @@
         <div class="grid-item"><input type="password" id="passwordInput" placeholder="Enter your password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required></div>
         <div class="grid-item" colspan="2">
             <button onclick="signIn()"><b>Sign In<b></b></button>
-            <p class="sign_up-link;">Don't have an account? <a href="sign_up.html">Sign Up here</a></p>
+            <p class="sign_up-link;">Don't have an account? <a href="sign_up.php">Sign Up here</a></p>
         </div>
     </div>
     </form>

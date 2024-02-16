@@ -9,7 +9,7 @@ function addChore() {
         return;
     }
 
-    // Generate a unique chore ID (You may replace this with your actual logic)
+    // Generate a unique chore ID 
     var choreId = Math.floor(Math.random() * 1000) + 1;
 
     // Create a new table row for the chore
@@ -31,11 +31,11 @@ function addChore() {
 }
 
 function editChore(choreId) {
-    // Placeholder for edit functionality (You can implement your own logic)
+    // Placeholder for edit functionality 
     alert("Edit Chore with ID: " + choreId);
 }
 
 function deleteChore(choreId) {
-    // Placeholder for delete functionality (You can implement your own logic)
+    // Placeholder for delete functionality
     alert("Delete Chore with ID: " + choreId);
 }

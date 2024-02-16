@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Work! - Sign Up</title>
     <link rel="stylesheet" href="../css/sign_up.css">
-    <script src="../js/sign_up.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +14,7 @@
     <div class="signup-container">
         <h1>Sign Up</h1>
         <h3><i>Kindly enter the following information to sign up onto our platform:</i></h3>
-        <form action="login.html" name="signupForm" method="POST" id="signupForm" onsubmit="redirectToLoginPage()">
+        <form action="login.php" name="signupForm" method="POST" id="signupForm" onsubmit="redirectToLoginPage()">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="fname" pattern="[A-Za-z]+" required>
 
@@ -53,8 +52,10 @@
 
             <button type="submit" name="submit">Sign Up</button>
         </form>
-        <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+        <p class="login-link">Already have an account? <a href="login.php">Login here</a></p>
     </div>
+    
+    <script src="../js/sign_up.js" defer></script>
 
 </body>
 

@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
     $stmt->bind_param("issssss", $fid, $fname, $lname, $gender, $dob, $email, $hashed_password);
     
     if ($stmt->execute()) {
-        header("Location: ../login/login.html");
+        header("Location: ../login/login.php");
         exit(); 
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
