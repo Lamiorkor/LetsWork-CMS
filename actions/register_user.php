@@ -13,11 +13,11 @@ if(isset($_POST['submit'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO People (rid, fid, fname, lname, gender, dob, email, passwd) 
-            VALUES (3, ?, ?, ?, ?, ?, ?, ?)";
-    
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
     $stmt = $con->prepare($sql);
     $stmt->bind_param("issssss", $fid, $fname, $lname, $gender, $dob, $email, $hashed_password);
-    
+
     if ($stmt->execute()) {
         header("Location: ../login/login.php");
         exit(); 

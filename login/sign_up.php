@@ -14,7 +14,7 @@
     <div class="signup-container">
         <h1>Sign Up</h1>
         <h3><i>Kindly enter the following information to sign up onto our platform:</i></h3>
-        <form action="login.php" name="signupForm" method="POST" id="signupForm" onsubmit="redirectToLoginPage()">
+        <form action="../actions/register_user.php" name="signupForm" method="POST" id="signupForm" onsubmit="redirectToRegisterUser()">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="fname" pattern="[A-Za-z]+" required>
 
