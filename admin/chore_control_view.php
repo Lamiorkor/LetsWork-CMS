@@ -1,3 +1,8 @@
+<?php
+include "../settings/core.php";
+userIDSessionCheck();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
     <div class="signup-container">
         <h1>Add Chore</h1>
 
-        <form id="addChoreForm">
+        <form id="addChoreForm" action="../actions/add_chore_action.php">
             <label for="choreName">Chore Name:</label>
             <input type="text" id="choreName" name="choreName" pattern="[A-Za-z0-9\s]+" required>
             
