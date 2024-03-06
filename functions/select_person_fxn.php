@@ -1,15 +1,15 @@
 <?php
-function getRoles()
+function selectPerson()
 {
     include "../settings/connection.php";
 
-    $sql = "SELECT fid, fam_name FROM Family_name";
+    $sql = "SELECT pid, fname FROM People";
 
     $result = mysqli_query($con, $sql);
 
     if ($result) {
         while ($row = mysqli_fetch_assoc($result)) {
-            echo '<option value="' . $row['fid'] . '">' . $row['fam_name'] . '</option>';
+            echo '<option value="' . $row['pid'] . '">' . $row['fname'] . '</option>';
         }
     } else {
         echo "Query failed to execute";

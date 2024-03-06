@@ -73,7 +73,7 @@ h2 {
 }
 
 .upcoming-chores {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 ul {
@@ -130,10 +130,11 @@ table,th,td{
     font-size: 20px;
     font-weight: bold; 
     border-radius: 5px;
-    width: 120px;
-    height: 25px;
-    display: flex;
+    /* width: px;
+    height: 25px; */
+    /* display: flex; */
     justify-content: center;
+    /* line-height: 6%; */
   }
   
   .arrange {
@@ -146,4 +147,9 @@ table,th,td{
     margin-left:auto;
     margin-right: auto;
     margin-top:20px;
+  }
+
+  .admin {
+    margin-top: 0;
+    margin-left: auto;
   }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/home_page.css">
 </head>
 <body>
+
     <div class="home-page">
         <section class="statistics" onclick="navigateToChoreManagement()">
             <div class="status-box in-progress">
@@ -34,11 +35,11 @@
         <br>
         <br>
 
-        <section class="upcoming-chores">
-            <h2>Upcoming Chores</h2>
+        <section class="upcoming-chores" >
+            <h2 style="margin-top:2%"> Upcoming Chores</h2>
             <ul>
-                <li>Cook Banku - Due on 2024-02-10</li>
-                <li>Fry Fish - Due on 2024-02-10</li>
+                <li>Cook Banku - Due on 2024-02-10</li> 
+                <li>Fry Fish - Due on 2024-02-10</li> 
             </ul>
         </section>
 
@@ -46,6 +47,15 @@
             <p>Completion Score:</p>
             <span style="color: yellow;">50%</span>
         </div>
+
+    </div>
+
+    <div class="logout">
+        <span><a href="../login/logout_view.php">Logout</a></span>
+    </div>
+
+    <div class="admin">
+        <span><a href="../admin/chore_control_view.php">Chore Control</a></span>
     </div>
 
     <script src="../js/home_page.js"></script>
