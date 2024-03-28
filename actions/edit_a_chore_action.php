@@ -6,15 +6,25 @@ if (isset($_POST['submit'])) {
    $cid = mysqli_real_escape_string($con, $_POST['cid']);
    $chore_name = mysqli_real_escape_string($con, $_POST['choreName']);
 
-    $sql = "UPDATE Chores WHERE id = '$cid'
-            SET chorename = '$chore_name'";
+    $sql = "UPDATE Chores
+            SET chorename = '$chore_name'
+            WHERE cid = '$cid'";
 
-    if (mysqli_query($con, $sql)) {
+    $result = mysqli_query($con, $sql);
+
+    if ($result) {
         header("Location: ../admin/chore_control_view.php");
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+        echo "Query failed to execute";
+        header("Location: ../admin/chore_control_view.php");
+        exit();
     }
 
     $con->close();
+    
+} else {
+    echo "No data received";
+    header("Location: ../admin/chore_control_view.php");    
+    exit();
 }

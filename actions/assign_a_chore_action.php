@@ -32,7 +32,9 @@ if (isset($_POST['submit'])) {
         header("Location: ../admin/assign_chore_view.php");
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+        echo "Error: Query failed to execute";
+        header("Location: ../admin/assign_chore_view.php");
+        exit();
     }
 
     $con->close();

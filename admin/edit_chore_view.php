@@ -4,6 +4,7 @@ include "../actions/get_a_chore_action.php";
 
 userIDSessionCheck();
 
+
 if(isset($_GET['cid'])) {
     $cid = $_GET['cid'];
 
@@ -15,7 +16,7 @@ if(isset($_GET['cid'])) {
     echo "<input type='hidden' name='cid' value='$cid'>"; 
     echo "<label for='choreName'>Chore Name:</label>";
     echo "<input type='text' id='choreName' name='choreName' value='" . $edit_chore['chorename'] . "' pattern='[A-Za-z0-9\s]+' required>";
-    echo "<button type='submit' name='submit'>Update Chore</button>";
+    echo "<button type='submit' name='submit' value='chore'>Update Chore</button>";
     echo "</form>";
 
     } else {

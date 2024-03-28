@@ -1,7 +1,8 @@
 <?php
-include "../actions/get_all_assignment_action.php";
 
 function getChores() {
+    include "../actions/get_all_assignment_action.php";
+
     $assigns = getAllAssignments();
 
     if ($assigns) {
@@ -17,9 +18,9 @@ function getChores() {
             echo "<td>" . $row["sid"] . "</td>";
             echo "<td>";
             echo "<div class='actions'>";
-            echo "<div class='edit'><a href='../admin/edit_chore_view.php?cid=" . $row['cid'] . "'><img src='../assets/pencil.png' alt='edit' title='edit request' style='width: 20px;'></a></div>";
-            echo "<div class='status'><img src='../assets/status.png' alt='edit' title='edit request' style='width: 20px;'></a></div>";
-            echo "<div class='delete'><a href='../actions/delete_chore_action.php?cid=" . $row['cid'] . "'><img src='../assets/delete.png' alt='delete' title='delete request' style='width: 20px;'></a></div>";
+            // echo "<div class='edit'><a href='../admin/edit_chore_view.php?assignmentid=" . $row['assignmentid'] . "'><img src='../assets/pencil.png' alt='edit' title='edit request' style='width: 20px;'></a></div>";
+            echo "<div class='status'><img src='../assets/status.png' alt='edit' title='edit request' style='width: 20px;'></div>";
+            echo "<div class='delete'><a href='../actions/delete_assignment_action.php?assignmentid=" . $row['assignmentid'] . "'><img src='../assets/delete.png' alt='delete' title='delete request' style='width: 20px;'></a></div>";
             echo "</div>";
             echo "</td>";
             echo "</tr>";
@@ -30,6 +31,8 @@ function getChores() {
         echo "No chore assignments found.";
     }
 }
+
+getChores();
 
 
 ?>
