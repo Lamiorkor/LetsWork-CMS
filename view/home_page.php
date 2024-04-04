@@ -1,3 +1,14 @@
+<?php
+include_once "../functions/home_fxn.php";
+//include "../functions/get_all_assignment_fxn.php";
+
+// $all_assignments = numOfAllAssignments();
+// $inprogress = numOfAssignmentsInProgress();
+// $incomplete_assignments = numOfIncompleteAssignments();
+// $completed_assignments = numOfCompletedAssignments();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +20,12 @@
 </head>
 <body>
     <div class="navigation">
+        <input type="checkbox" id ="check">
+        <label for="check">
+            <img src="../assets/menu.png" alt='menu image'>
+        </label>
+
+        <h2>Let's Work - A Chore Management System</h2>
         <ul>
             <li>
                 <a href="../view/home_page.php">
@@ -39,17 +56,21 @@
 
     <div class="home-page">
         <section class="statistics" onclick="navigateToChoreManagement()">
+            <div class="status-box all-assignments">
+                <p>All Assignments</p>
+                <span><?php echo numOfAllAssignments(); ?></span>
+            </div>    
             <div class="status-box in-progress">
                 <p>In Progress</p>
-                <span>2</span>
+                <span><?php numOfAssignmentsInProgress(); ?></span>
             </div>
             <div class="status-box incomplete">
                 <p>Incomplete</p>
-                <span>1</span>
+                <span><?php numOfIncompleteAssignments(); ?></span>
             </div>
             <div class="status-box completed">
                 <p>Completed</p>
-                <span>3</span>
+                <span><?php numOfCompletedAssignments(); ?></span>
             </div>
         </section>
 
@@ -65,26 +86,15 @@
 
         <section class="upcoming-chores" >
             <h2 style="margin-top:2%"> Upcoming Chores</h2>
-            <ul>
-                <li>Cook Banku - Due on 2024-02-10</li> 
-                <li>Fry Fish - Due on 2024-02-10</li> 
-            </ul>
+            <div><?php getRecentAssignments(); ?></div>
         </section>
 
-        <div class="score">
+        <!-- <div class="score">
             <p>Completion Score:</p>
             <span style="color: yellow;">50%</span>
-        </div>
+        </div> -->
 
     </div>
-
-    <!-- <div class="logout">
-        <span><a href="../login/logout_view.php">Logout</a></span>
-    </div>
-
-    <div class="admin">
-        <span><a href="../admin/chore_control_view.php">Chore Control</a></span>
-    </div> -->
 
     <script src="../js/home_page.js"></script>
 

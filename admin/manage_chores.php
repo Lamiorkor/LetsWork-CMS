@@ -4,22 +4,6 @@ include "../functions/get_chore_fxn.php";
 
 
 userIDSessionCheck();
-userIDSessionCheck();
-userRoleIDSessionCheck();
-if (userRoleIDSessionCheck() == 1) {
-    header("Location: ../admin/chore_control_view.php");
-    exit();
-}
-
-if (userRoleIDSessionCheck() == 2) {
-    header("Location: ../admin/manage_chores.php");
-    exit();
-}
-
-if (userRoleIDSessionCheck() == 3) {
-    header("Location: ../view/home_page.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +12,11 @@ if (userRoleIDSessionCheck() == 3) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Work! - Add Chore</title>
+    <title>Let's Work! - Manage Chores</title>
     <link rel="stylesheet" href="../css/chore_control_view.css">
 </head>
 
 <body>
-    <!-- <span style="margin:0; padding:0; margin-left:0%;"><a href="assign_chore_view.php">Assign Chore</a></span>  -->
-
     <div class="navigation">
         <ul>
             <li>
@@ -44,7 +26,7 @@ if (userRoleIDSessionCheck() == 3) {
                 </a>
             </li>
             <li>
-                <a href="../admin/chore_control_view.php">
+                <a href="../admin/manage_chores.php">
                     <span class="icon"><img src='../assets/plus.png' alt='add_chore' title='add_chore_page' style='width: 15px;'></span>
                     <span class="title">Add Chores</span>
                 </a>
@@ -82,7 +64,7 @@ if (userRoleIDSessionCheck() == 3) {
                         <th>Chore Names</th>
                         <th>Actions</th>
                     </tr>
-                    <?php getChores(); ?>
+                    <?php getChores_Admin(); ?>
                 </table>
             </div>
         </div>

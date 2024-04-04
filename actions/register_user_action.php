@@ -10,7 +10,7 @@ if (isset($_POST['register'])) {
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
     $tel = mysqli_real_escape_string($con, $_POST['tel']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $passwd = mysqli_real_escape_string($con, $_POST['passwd']);
+    $password = mysqli_real_escape_string($con, $_POST['passwd']);
 
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);

@@ -1,36 +1,28 @@
 <?php
 
-function getAllAssignments() {
+function getAllAssignments()
+{
     include "../settings/connection.php";
 
-    $sql = "SELECT * FROM Assignment";
-
+    $sql = "SELECT a.assignmentid, a.cid, a.date_assign, a.date_due, a.who_assigned, 
+            a.sid, status.sname, chores.chorename, People.fname, People.lname 
+            FROM assignment a JOIN chores ON a.cid = chores.cid 
+            JOIN assigned_people ON a.assignmentid = assigned_people.assignmentid 
+            JOIN People ON assigned_people.pid = People.pid 
+            JOIN status ON assignment.sid = status.sid";
+    
     $result = mysqli_query($con, $sql);
 
-    if ($result) {
-        if (mysqli_num_rows($result) > 0) {
-            $assignments = array();
+    $var_data = $result; 
 
-            while ($row = mysqli_fetch_assoc($result)) {
-                $assignments[] = $row;
-            }
-
-            return $assignments;
-
-        } else {
-            echo "No assignments found";
-            exit();
-        }
-    } else {
-        echo "Query failed to execute";
-        exit();
-    }
-
-    $con->close();
-
+    return $var_data;
 }
 
-function getAssignmentsInProgress() {
+
+
+
+function getAssignmentsInProgress()
+{
     include "../settings/connection.php";
 
     $sql = "SELECT * FROM Assignment WHERE sid = 2";
@@ -46,21 +38,16 @@ function getAssignmentsInProgress() {
             }
 
             return $assignments;
-
         } else {
             echo "No assignments found";
-            exit();
         }
     } else {
         echo "Query failed to execute";
-        exit();
     }
-
-    $con->close();
-
 }
 
-function getIncompleteAssignments() {
+function getIncompleteAssignments()
+{
     include "../settings/connection.php";
 
     $sql = "SELECT * FROM Assignment WHERE sid = 4";
@@ -76,21 +63,16 @@ function getIncompleteAssignments() {
             }
 
             return $assignments;
-
         } else {
             echo "No assignments found";
-            exit();
         }
     } else {
         echo "Query failed to execute";
-        exit();
     }
-
-    $con->close();
-
 }
 
-function getCompletedAssignments() {
+function getCompletedAssignments()
+{
     include "../settings/connection.php";
 
     $sql = "SELECT * FROM Assignment WHERE sid = 3";
@@ -106,21 +88,16 @@ function getCompletedAssignments() {
             }
 
             return $assignments;
-
         } else {
             echo "No assignments found";
-            exit();
         }
     } else {
         echo "Query failed to execute";
-        exit();
     }
-
-    $con->close();
-
 }
 
-function getRecentAssignments() {
+function getRecentAssignments()
+{
     include "../settings/connection.php";
 
     $sql = "SELECT * FROM Assignment 
@@ -139,19 +116,19 @@ function getRecentAssignments() {
             }
 
             return $assignments;
-
         } else {
             echo "No assignments found";
-            exit();
         }
     } else {
         echo "Query failed to execute";
-        exit();
     }
-
-    $con->close();
-
 }
+
+// getAllAssignments();
+// getAssignmentsInProgress();
+// getIncompleteAssignments();
+// getCompletedAssignments();
+// getRecentAssignments();
 
 
 
@@ -181,8 +158,3 @@ function getRecentAssignments() {
 
 //     }
 // }
-
-
-
-
-?>

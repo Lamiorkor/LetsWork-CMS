@@ -43,7 +43,7 @@ include "../functions/select_role_fxn.php";
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="tel">Telephone Number:</label>
+            <label for="tel">Telephone Number (format: +233890982765):</label>
             <input type="text" id="tel" name="tel" pattern="^\+\d{1,3}\d{9}$|^\d{9}$" required>
 
             <label for="password">Password:</label>

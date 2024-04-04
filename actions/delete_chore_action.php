@@ -1,22 +1,36 @@
 <?php 
 include "../settings/connection.php";
 
+$confirmDelete = true;
+
 if(isset($_GET['cid'])) {
     $cid = $_GET['cid'];
 
-    $sql = "DELETE FROM Chores WHERE cid = '$cid'";
+    if ($confirmDelete) {
+        
+?>
 
-    $result = mysqli_query($con, $sql);
+    <script>
+        confirm("Do you want to delete this chore?");
+    </script>
 
-    if ($result) {
-        header("Location:../admin/chore_control_view.php");
+<?php
+
+        $sql = "DELETE FROM Chores WHERE cid = '$cid'";
+
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            header("Location:../admin/chore_control_view.php");
+        } else {
+            echo "Query failed to execute";
+            return false;
+        }
+
     } else {
-        echo "Query failed to execute";
-        return false;
+        header("Location: ../admin/chore_control_view.php");
     }
 
-} else {
-    header("Location: ../admin/chore_control_view.php");
 }
 
 ?>

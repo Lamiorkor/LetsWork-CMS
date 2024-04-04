@@ -1,3 +1,3 @@
 function navigateToChoreManagement() {
-    window.location.href = '../view/manage_chores.html';
+    window.location.href = '../admin/manage_chores.php';
 }

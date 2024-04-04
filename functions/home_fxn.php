@@ -1,5 +1,5 @@
 <?php
-include "../actions/get_all_assignment_action.php";
+include "../actions/get_all_assignment_action.php";               
 
 //displaying chore statistics for:
 
@@ -11,9 +11,12 @@ function numOfAllAssignments() {
     $count = 0;
 
     foreach ($assignments as $assignment) {
-        $count++;
+        if (mysqli_num_rows($assignment) > 0) {
+            $count++;
+        } else {
+            $count = 0;
+        }
     }
-
     return $count;
 }
 
@@ -24,10 +27,13 @@ function numOfAssignmentsInProgress() {
 
     $count = 0;
 
-    foreach($inprogress as $assignment) {
-        $count++;
+    foreach ($inprogress as $assignment) {
+        if (mysqli_num_rows($assignment) > 0) {
+            $count++;
+        } else {
+            $count = 0;
+        }
     }
-
     return $count;
 }
 
@@ -37,10 +43,13 @@ function numOfIncompleteAssignments() {
 
     $count = 0;
 
-    foreach($incomplete as $assignment) {
-        $count++;
+    foreach ($incomplete as $assignment) {
+        if (mysqli_num_rows($assignment) > 0) {
+            $count++;
+        } else {
+            $count = 0;
+        }
     }
-
     return $count;
 }
 
@@ -50,11 +59,14 @@ function numOfCompletedAssignments() {
 
     $count = 0;
 
-    foreach($completed as $assignment) {
-        $count++;
+    foreach ($completed as $assignment) {
+        if (mysqli_num_rows($assignment) > 0) {
+            $count++;
+        } else {
+            $count = 0;
+        }
     }
-
     return $count;
 }
-
+echo numOfAllAssignments();
 ?>
